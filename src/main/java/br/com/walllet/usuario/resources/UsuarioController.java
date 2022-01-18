@@ -1,5 +1,6 @@
 package br.com.walllet.usuario.resources;
 
+import br.com.walllet.usuario.constraint.Cpf;
 import br.com.walllet.usuario.entity.usuario.UsuarioRequest;
 import br.com.walllet.usuario.entity.usuario.UsuarioResponse;
 import io.swagger.annotations.Api;
@@ -20,5 +21,5 @@ public interface UsuarioController {
     @ApiOperation(value = "Obter usuario por cpf.")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("{cpf}")
-    ResponseEntity<UsuarioResponse> obterUsuarioPorCof(@PathVariable String cpf);
+    ResponseEntity<UsuarioResponse> obterUsuarioPorCof(@PathVariable @Valid @Cpf String cpf);
 }

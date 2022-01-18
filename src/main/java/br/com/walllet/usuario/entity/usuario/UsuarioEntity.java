@@ -19,6 +19,7 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @Column(unique = true)
     private String cpf;
     private LocalDate dataNascimento;
     private LocalDateTime dataHoraCadastro;
@@ -26,7 +27,7 @@ public class UsuarioEntity {
     @ElementCollection
     @CollectionTable(name = "telefone")
     private Set<String> telefones;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "endereco_id")
     private EnderecoEntity endereco;
 }
