@@ -1,4 +1,4 @@
-package br.com.walllet.usuario;
+package br.com.walllet.usuario.unit;
 
 import br.com.walllet.usuario.constraint.validator.CpfValidator;
 import org.junit.jupiter.api.BeforeEach;
